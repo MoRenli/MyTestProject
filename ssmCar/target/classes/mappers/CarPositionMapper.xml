@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lkjedu.car.mapper.CarPositionMapper">
+
+    <resultMap id="carPositionMap" type="com.lkjedu.car.beans.CarPosition">
+        <id column="pid" property="pid"/>
+        <result column="areaId" property="areaId"/>
+        <result column="positionNo" property="positionNo"/>
+        <result column="addTime" property="addTime"/>
+        <result column="isactive" property="isactive"/>
+
+
+        <association property="carArea" javaType="com.lkjedu.car.beans.CarArea">
+            <id column="id" property="id"/>
+            <result column="areaName" property="areaName"/>
+            <result column="price" property="price"/>
+        </association>
+    </resultMap>
+    <update id="upDateById">
+        update
+            t_carposition
+        set areaId = #{areaId},
+            positionNo =#{positionNo},
+            isactive = #{isactive}
+        where
+            pid = #{pid}
+    </update>
+    <delete id="delById">
+        delete from t_carposition where pid = #{id}
+    </delete>
+
+
+    <select id="all" resultMap="carPositionMap">
+        select
+            t_carposition.*,
+            t_cararea.*
+        from
+            t_carposition,t_cararea
+    </select>
+    <select id="All" resultMap="carPositionMap">
+        select
+             t_carposition.*,
+             t_cararea.*
+        from
+             t_carposition,t_cararea;
+    </select>
+
+
+</mapper>

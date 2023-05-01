@@ -1,0 +1,46 @@
+.main {
+   	padding:  0 100px;
+   	width: auto;
+   	height: auto;
+   	background-color: #393D49;
+}
+.main .title,
+.list_box {
+   	display: inline-block;
+    vertical-align: middle;
+}
+.main .title li {
+   	height: 100%;
+    line-height: 60px;
+}
+.main .title li p {
+   	font-size: 20px;
+   	color: #fff;
+}
+.list-group button {
+    font-size: 16px;
+}
+.layui-nav-item p {
+   	font-size: 20px
+}
+.layui-nav,.list_box {
+   	float: right;
+}
+.textNowrap {
+    text-align: left;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.col-md-1 {
+    width: 3.333333333%;
+}
+.col-md-2 {
+    width: 5.999999999%;
+}
+.col-md-2_5 {
+    width: 7.655556%;
+}
+.col-md-3 {
+    width: 9%;
+}

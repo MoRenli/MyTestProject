@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lkjedu.car.mapper.UserMapper">
+
+    <update id="updateByID">
+        update
+            t_user
+        set
+            userName = #{userName},password = #{password} trueName = #{trueName}
+        where
+            id = #{id}
+    </update>
+    <select id="all" resultType="com.lkjedu.car.beans.User">
+        select * from t_user
+    </select>
+
+</mapper>
